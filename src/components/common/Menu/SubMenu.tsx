@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
-import style from '@/style/components/Menu.module.css'
+import style from '@/style/components/common/Menu.module.css'
 
 function SubMenu({ opened }: { opened: boolean }) {
   const SubMenuList = [

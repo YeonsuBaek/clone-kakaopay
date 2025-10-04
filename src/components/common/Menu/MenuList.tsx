@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import MenuItem from './MenuItem'
+import style from '@/style/components/common/Menu.module.css'
 
 function MenuList() {
   const menuList = [
@@ -33,7 +34,7 @@ function MenuList() {
     setOpenedSubMenuList((prev: string[]) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]))
   }
   return (
-    <ul>
+    <ul className={style.menuList}>
       {menuList.map((menu) => (
         <MenuItem key={menu.id} opened={openedSubMenuList.includes(menu.id)} setToggle={() => handleToggle(menu.id)} />
       ))}

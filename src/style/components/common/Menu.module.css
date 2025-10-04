@@ -1,0 +1,198 @@
+.menu {
+  position: fixed;
+  top: 62px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #191c20;
+  z-index: 300;
+  color: #fff;
+  transform: translateY(-100%);
+}
+
+.opened {
+  transform: translateY(0%);
+  transition: transform 300ms ease-in-out;
+  transition-delay: 200ms;
+}
+
+.closed {
+  transform: translateY(calc(-100% - 62px));
+  transition: transform 300ms ease-in-out;
+}
+
+.menuItemButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 72px;
+  padding: 0 24px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #191c20;
+  border: none;
+}
+
+.caret {
+  padding-top: 16px;
+}
+.openedCaret {
+  transform: rotate(-180deg);
+  transition: transform 200ms ease-in-out;
+}
+.closedCaret {
+  transform: rotate(0);
+  transition: transform 200ms ease-in-out;
+}
+
+.subMenu {
+  transition: all 200ms ease-in-out;
+  transition-delay: 100ms;
+  overflow: hidden;
+}
+
+.subMenuItemButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 56px;
+  padding-left: 48px;
+  background-color: #14181c;
+  font-size: 16px;
+  color: #999;
+}
+
+.totalMenuList {
+  display: none;
+}
+
+@media screen and (min-width: 770px) {
+  .menu {
+    top: 84px;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .opened {
+    transform: translateY(0%);
+    transition: transform 0ms ease-in-out;
+    transition-delay: 0;
+  }
+
+  .closed {
+    transform: translateY(calc(-100% - 84px));
+    transition: transform 0ms ease-in-out;
+  }
+
+  .menuList {
+    display: none;
+  }
+
+  .totalMenuList {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+  }
+  .totalMenuList * {
+    list-style-type: none;
+  }
+
+  .totalMenuItem {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 0 120px 0;
+    border-right: 1px solid rgba(151, 151, 151, 0.16);
+    gap: 32px;
+  }
+  .totalMenuItem:nth-child(1) {
+    border-left: 1px solid rgba(151, 151, 151, 0.16);
+  }
+  .totalMenuItem:hover {
+    background-color: #14181c;
+  }
+
+  .totalMenuTitle {
+    font-size: 22px;
+    line-height: 32px;
+    color: #f8f9fa;
+    width: 100%;
+    text-align: center;
+  }
+
+  .totalMenuTitleLink {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .totalMenuSubList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 32px;
+  }
+
+  .totalMenuSubItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .totalMenuSubTitle {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+  }
+  .totalMenuSubTitle:hover {
+    text-decoration: underline;
+  }
+
+  .totalMenuSubSubList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .totalMenuSubSubItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .totalMenuSubText {
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.56);
+    text-align: center;
+    text-decoration: none;
+  }
+  .totalMenuSubText:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .totalMenuList {
+    justify-content: center;
+  }
+}

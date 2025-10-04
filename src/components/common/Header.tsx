@@ -1,22 +1,29 @@
 'use client'
 import Logo from '@/assets/icons/Logo'
 import React, { useState } from 'react'
-import style from '@/style/components/Header.module.css'
+import style from '@/style/components/common/Header.module.css'
+import styleByNav from '@/style/components/common/Navigation.module.css'
 import Link from 'next/link'
 import { List, X } from '@phosphor-icons/react'
 import Menu from './Menu'
+import Navigation from './Navigation'
 
 function Header() {
   const [openedMenu, setOpenedMenu] = useState(false)
 
   return (
     <>
-      <header className={`${style.header} ${openedMenu ? style.headerOpenedMenu : style.headerClosedMenu}`}>
+      <header
+        className={`${style.header} ${openedMenu ? style.headerOpenedMenu : style.headerClosedMenu} ${
+          styleByNav.header
+        }`}
+      >
         <h1 className={style.logo}>
           <Link href="/" aria-label="홈 화면으로 이동">
             <Logo />
           </Link>
         </h1>
+        {!openedMenu && <Navigation />}
         <button
           type="button"
           className={style.menuButton}

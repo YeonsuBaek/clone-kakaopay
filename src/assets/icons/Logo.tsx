@@ -4,7 +4,6 @@ function Logo() {
   return (
     <svg viewBox="0 0 92 22" aria-label="kakaopay (홈으로 이동)" aria-hidden="false" role="img">
       <g fill="none" fill-rule="evenodd">
-        <path d="M0 0L248 0 248 84 0 84z" transform="translate(-181 -778) translate(101 747)"></path>
         <g fill="#FFF">
           <g>
             <path

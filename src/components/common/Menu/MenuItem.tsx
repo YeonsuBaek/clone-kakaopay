@@ -1,6 +1,6 @@
 import React from 'react'
 import SubMenu from './SubMenu'
-import style from '@/style/components/Menu.module.css'
+import style from '@/style/components/common/Menu.module.css'
 import { CaretDown } from '@phosphor-icons/react'
 
 function MenuItem({ opened, setToggle }: { opened: boolean; setToggle: () => void }) {
