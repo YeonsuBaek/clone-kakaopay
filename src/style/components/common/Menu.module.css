@@ -2,10 +2,10 @@
   position: fixed;
   top: 62px;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: #191c20;
-  z-index: 300;
+  z-index: var(--z-menu);
   color: #fff;
   transform: translateY(-100%);
 }
@@ -71,7 +71,6 @@
 @media screen and (min-width: 770px) {
   .menu {
     top: 84px;
-    width: 100%;
     overflow-x: auto;
   }
 
@@ -94,7 +93,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 100%;
     height: 100%;
   }
   .totalMenuList * {

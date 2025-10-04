@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   display: flex;
@@ -9,7 +9,7 @@
   height: 62px;
   padding: 0 8px 0 16px;
   background-color: transparent;
-  z-index: 500;
+  z-index: var(--z-header);
 }
 
 .headerOpenedMenu {
