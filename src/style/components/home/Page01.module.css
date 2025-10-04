@@ -1,7 +1,7 @@
 .section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 178vw;
   overflow: hidden;
 }
 
@@ -14,10 +14,12 @@
 }
 
 .text {
+  display: inline-block;
   color: #fff;
   font-size: 42px;
   letter-spacing: -0.7px;
   margin-bottom: 20px;
+  animation: textSlideUp 1s forwards;
 }
 
 .playButton {
@@ -82,6 +84,18 @@
   display: none;
 }
 
+@keyframes textSlideUp {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @keyframes scrollDown {
   0% {
     bottom: 28px;
@@ -113,6 +127,7 @@
 @media screen and (min-width: 770px) {
   .section {
     min-width: 1200px;
+    height: 100vh;
   }
 
   .mobileContent {

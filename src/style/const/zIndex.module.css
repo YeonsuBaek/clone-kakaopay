@@ -1,5 +1,5 @@
 :root {
-  --z-header: 400;
+  --z-header: 450;
   --z-navigation-content: 500;
   --z-navigation-wrapper: 400;
   --z-menu: 400;
@@ -8,6 +8,6 @@
   --z-page01-mobileContent: 100;
   --z-page01-scrollDown: 50;
   --z-page01-layout: 300;
-  --z-video-controllerWrapper: 300;
+  --z-video-controllerWrapper: 350;
   --z-video-controllerBackground: 250;
 }
