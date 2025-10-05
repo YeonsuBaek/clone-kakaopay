@@ -24,9 +24,6 @@
     background-color: #fff;
   }
 
-  .header path {
-    fill: #fff;
-  }
   .header:has(.nav:hover) path {
     fill: #060b11;
     transition: all 300ms ease-in-out;
@@ -177,5 +174,9 @@
     text-underline-offset: 4px;
     text-decoration-thickness: 0.5px;
     text-decoration-color: #060b11;
+  }
+
+  .navWhiteTheme .navButton {
+    color: #060b11;
   }
 }

@@ -10,16 +10,26 @@
   padding: 0 8px 0 16px;
   background-color: transparent;
   z-index: var(--z-header);
+  transition: all 200ms ease-in-out;
 }
 
 .headerOpenedMenu {
   background-color: #191c20;
-  transition: all 200ms ease-in-out;
 }
 .headerClosedMenu {
   background-color: transparent;
-  transition: all 200ms ease-in-out;
   transition-delay: 300ms;
+}
+
+.headerWhiteTheme {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  transition: none;
+}
+.headerWhiteTheme.headerOpenedMenu {
+  background-color: #191c20;
 }
 
 .logo {

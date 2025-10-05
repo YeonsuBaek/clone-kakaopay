@@ -2,9 +2,9 @@ import React from 'react'
 import style from '@/style/components/common/Navigation.module.css'
 import Link from 'next/link'
 
-function Navigation() {
+function Navigation({ whiteTheme = false }: { whiteTheme: boolean }) {
   return (
-    <div className={style.navWrapper}>
+    <div className={`${style.navWrapper} ${whiteTheme ? style.navWhiteTheme : ''}`}>
       <nav className={style.nav}>
         <ul className={style.navList}>
           <li className={style.navItem}>
