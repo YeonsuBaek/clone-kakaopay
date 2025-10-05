@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Image01 from '@/assets/images/home/page03/메인3_1.png'
 import Image02 from '@/assets/images/home/page03/메인3_2.png'
 import Image from 'next/image'
@@ -10,9 +10,26 @@ import style from '@/style/components/home/Page03.module.css'
 
 function Page03() {
   const isMobile = isMobileScreen()
+  const sectionRef = useRef<HTMLElement>(null)
+
+  const isVisible = (el: Element) => window.innerHeight > el.getBoundingClientRect().top
+
+  const handleScroll = () => {
+    requestAnimationFrame(() => {
+      if (sectionRef.current) {
+        sectionRef.current.classList.toggle(style.show, isVisible(sectionRef.current))
+      }
+    })
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isMobile])
 
   return (
-    <section className={style.section}>
+    <section ref={sectionRef} className={style.section}>
       <Link href="/" aria-label="카카오페이지 보도자료 페이지로 이동하기" className={style.imageButton}>
         <Image
           src={isMobile ? Image02 : Image01}
