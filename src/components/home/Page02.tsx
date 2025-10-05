@@ -48,7 +48,10 @@ function Page02() {
         elementsRef.current.forEach((el) => {
           if (!el) return
           el.classList.toggle(style.show, isVisible(el))
-          updateScrollTransform()
+
+          if (!isMobile) {
+            updateScrollTransform()
+          }
         })
         updateVideoPlayback()
         ticking.current = false
@@ -61,50 +64,6 @@ function Page02() {
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isMobile])
-
-  //   useEffect(() => {
-  //     const isShow = (el: Element) => window.innerHeight > el.getBoundingClientRect().top
-
-  //     const handleScroll = () => {
-  //       if (elementsRef.current) {
-  //         elementsRef.current.forEach((el) => {
-  //           if (!el) return
-  //           el.classList.toggle(style.show, isShow(el))
-  //         })
-
-  //         if (isShow(elementsRef.current[1])) {
-  //           console.log(elementsRef.current[1])
-  //           const el = elementsRef.current[1]
-  //           const rect = el.getBoundingClientRect()
-  //           const windowHeight = window.innerHeight
-
-  //           const start = rect.top - windowHeight + 50 // (A) 화면에 100px 들어온 시점
-  //           const end = rect.bottom // (B) 완전히 사라질 때
-
-  //           // progress: 0 ~ 1
-  //           const progress = Math.min(Math.max((windowHeight - rect.top - 100) / (end - start), 0), 1)
-
-  //           // translateY: 15% -> -2%
-  //           const translateY = 15 - progress * (15 + 10)
-
-  //           el.style.transform = `translateY(${translateY}%)`
-  //         }
-  //       }
-
-  //       if (videoRef.current) {
-  //         const isPlay = isShow(videoRef.current)
-  //         if (isPlay) {
-  //           videoRef.current.play()
-  //         } else {
-  //           videoRef.current.pause()
-  //         }
-  //       }
-  //     }
-
-  //     window.addEventListener('scroll', handleScroll)
-  //     handleScroll()
-  //     return () => window.removeEventListener('scroll', handleScroll)
-  //   }, [isMobile])
 
   return (
     <section className={style.section}>
